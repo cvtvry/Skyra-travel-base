@@ -3,43 +3,32 @@
 
 <head>
 
-    <meta charset="UTF-8" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Skýra | Viajes Legendarios</title>
 
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <!-- LOADER -->
-
-    <div class="loader">
-
-        <div class="loader-logo">
-            SKÝRA
-        </div>
-
-    </div>
-
     <!-- NAVBAR -->
 
     <header class="navbar">
 
-        <div class="logo-container">
+        <div class="logo">
 
-            <div class="dragon-logo">
+            <div class="logo-icon">
                 ✦
             </div>
 
-            <h1 class="logo-text">
+            <h1>
                 Skýra
             </h1>
 
@@ -47,15 +36,10 @@
 
         <nav>
 
-            <ul class="nav-links">
-
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#destinos">Destinos</a></li>
-                <li><a href="#packages">Paquetes</a></li>
-                <li><a href="#promo">Promociones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-
-            </ul>
+            <a href="#home">Inicio</a>
+            <a href="#destinos">Destinos</a>
+            <a href="#paquetes">Paquetes</a>
+            <a href="#contacto">Contacto</a>
 
         </nav>
 
@@ -65,24 +49,27 @@
 
     <section class="hero" id="home">
 
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
 
-            <p class="subtitle">
-                VIAJES ÉPICOS POR EL NORTE DE EUROPA
+            <p class="tag">
+                VIAJES PREMIUM POR EUROPA DEL NORTE
             </p>
 
             <h2>
-                Descubre reinos,
-                leyendas y dragones.
+                Descubre leyendas,
+                castillos y dragones.
             </h2>
 
-            <p class="description">
-                Explora Noruega, Irlanda, Inglaterra,
-                Escocia y Dinamarca con experiencias
-                premium inspiradas en las leyendas nórdicas.
+            <p class="hero-text">
+
+                Experiencias exclusivas en Noruega,
+                Irlanda, Inglaterra, Escocia y Dinamarca.
+
             </p>
 
-            <a href="#packages" class="hero-btn">
+            <a href="#paquetes" class="main-button">
                 Reservar Ahora
             </a>
 
@@ -99,14 +86,14 @@
             <p>DESTINOS DESTACADOS</p>
 
             <h2>
-                Viajes Legendarios
+                Explora el norte legendario
             </h2>
 
         </div>
 
-        <div class="cards-container">
+        <div class="destination-grid">
 
-            <div class="card">
+            <div class="destination-card">
 
                 <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Noruega">
 
@@ -122,7 +109,7 @@
 
             </div>
 
-            <div class="card">
+            <div class="destination-card">
 
                 <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop" alt="Irlanda">
 
@@ -138,16 +125,16 @@
 
             </div>
 
-            <div class="card">
+            <div class="destination-card">
 
-                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" alt="Escocia">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Escocia">
 
                 <div class="card-content">
 
                     <h3>Escocia</h3>
 
                     <p>
-                        Highlands, fortalezas antiguas y leyendas.
+                        Highlands, lagos y fortalezas históricas.
                     </p>
 
                 </div>
@@ -158,36 +145,9 @@
 
     </section>
 
-    <!-- PROMO -->
+    <!-- PAQUETES -->
 
-    <section class="promo-section" id="promo">
-
-        <div class="promo-content">
-
-            <p class="promo-tag">
-                EXPERIENCIA PREMIUM
-            </p>
-
-            <h2>
-                Viajes diseñados para aventureros modernos
-            </h2>
-
-            <p>
-                Hoteles exclusivos, tours guiados y experiencias
-                inspiradas en las leyendas europeas.
-            </p>
-
-            <button class="promo-btn">
-                Explorar paquetes
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- PACKAGES -->
-
-    <section class="packages" id="packages">
+    <section class="packages" id="paquetes">
 
         <div class="section-title">
 
@@ -203,22 +163,24 @@
 
             <div class="package-card">
 
-                <div class="package-top">
+                <span class="package-country">
+                    Noruega
+                </span>
 
-                    <h3>Dragon Fjords</h3>
+                <h3>
+                    Dragon Fjords
+                </h3>
 
-                    <span>Noruega</span>
-
-                </div>
-
-                <h2>$2.490</h2>
+                <h4>
+                    $2.490
+                </h4>
 
                 <ul>
 
-                    <li>✓ Hoteles premium</li>
-                    <li>✓ Tour auroras boreales</li>
-                    <li>✓ Experiencia vikinga</li>
-                    <li>✓ Transporte incluido</li>
+                    <li>Hoteles premium</li>
+                    <li>Auroras boreales</li>
+                    <li>Experiencia vikinga</li>
+                    <li>Transporte incluido</li>
 
                 </ul>
 
@@ -230,26 +192,28 @@
 
             <div class="package-card featured">
 
-                <div class="featured-badge">
+                <span class="featured-label">
                     MÁS VENDIDO
-                </div>
+                </span>
 
-                <div class="package-top">
+                <span class="package-country">
+                    Escocia + Irlanda
+                </span>
 
-                    <h3>Kingdom Legends</h3>
+                <h3>
+                    Kingdom Legends
+                </h3>
 
-                    <span>Escocia + Irlanda</span>
-
-                </div>
-
-                <h2>$3.990</h2>
+                <h4>
+                    $3.990
+                </h4>
 
                 <ul>
 
-                    <li>✓ Ruta medieval</li>
-                    <li>✓ Castillos históricos</li>
-                    <li>✓ Experiencia cinematográfica</li>
-                    <li>✓ Guía exclusivo</li>
+                    <li>Ruta medieval</li>
+                    <li>Castillos históricos</li>
+                    <li>Guía exclusivo</li>
+                    <li>Experiencia cinematográfica</li>
 
                 </ul>
 
@@ -261,22 +225,24 @@
 
             <div class="package-card">
 
-                <div class="package-top">
+                <span class="package-country">
+                    Dinamarca
+                </span>
 
-                    <h3>Nordic Crown</h3>
+                <h3>
+                    Nordic Crown
+                </h3>
 
-                    <span>Dinamarca</span>
-
-                </div>
-
-                <h2>$2.190</h2>
+                <h4>
+                    $2.190
+                </h4>
 
                 <ul>
 
-                    <li>✓ Hoteles 5 estrellas</li>
-                    <li>✓ Gastronomía nórdica</li>
-                    <li>✓ Tours privados</li>
-                    <li>✓ Experiencia luxury</li>
+                    <li>Hoteles luxury</li>
+                    <li>Tour privado</li>
+                    <li>Gastronomía nórdica</li>
+                    <li>Experiencia premium</li>
 
                 </ul>
 
@@ -290,139 +256,23 @@
 
     </section>
 
-    <!-- STATS -->
+    <!-- CTA -->
 
-    <section class="stats">
+    <section class="cta" id="contacto">
 
-        <div class="stat-box">
+        <div class="cta-content">
 
-            <h2>+12K</h2>
-            <p>Viajeros felices</p>
-
-        </div>
-
-        <div class="stat-box">
-
-            <h2>98%</h2>
-            <p>Satisfacción</p>
-
-        </div>
-
-        <div class="stat-box">
-
-            <h2>5</h2>
-            <p>Destinos épicos</p>
-
-        </div>
-
-        <div class="stat-box">
-
-            <h2>24/7</h2>
-            <p>Soporte premium</p>
-
-        </div>
-
-    </section>
-
-    <!-- TESTIMONIALS -->
-
-    <section class="testimonials">
-
-        <div class="section-title">
-
-            <p>EXPERIENCIAS REALES</p>
+            <p>
+                COMIENZA TU AVENTURA
+            </p>
 
             <h2>
-                Lo que dicen nuestros viajeros
+                Vive una experiencia épica con Skýra
             </h2>
 
-        </div>
-
-        <div class="testimonial-grid">
-
-            <div class="testimonial-card">
-
-                <p>
-                    “La experiencia más increíble que hemos vivido.
-                    Todo parecía una película.”
-                </p>
-
-                <h4>
-                    — Emilia R.
-                </h4>
-
-            </div>
-
-            <div class="testimonial-card">
-
-                <p>
-                    “Escocia se sintió mágica.
-                    Skýra cuidó cada detalle.”
-                </p>
-
-                <h4>
-                    — Lucas M.
-                </h4>
-
-            </div>
-
-            <div class="testimonial-card">
-
-                <p>
-                    “Los hoteles, tours y paisajes
-                    fueron espectaculares.”
-                </p>
-
-                <h4>
-                    — Catalina V.
-                </h4>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- BOOKING -->
-
-    <section class="booking">
-
-        <div class="booking-container">
-
-            <div class="booking-text">
-
-                <p>
-                    RESERVA TU AVENTURA
-                </p>
-
-                <h2>
-                    Comienza tu viaje legendario
-                </h2>
-
-            </div>
-
-            <form class="booking-form">
-
-                <input type="text" placeholder="Nombre">
-
-                <input type="email" placeholder="Correo">
-
-                <select>
-
-                    <option>Selecciona destino</option>
-                    <option>Noruega</option>
-                    <option>Irlanda</option>
-                    <option>Escocia</option>
-                    <option>Inglaterra</option>
-                    <option>Dinamarca</option>
-
-                </select>
-
-                <button type="submit">
-                    Reservar Ahora
-                </button>
-
-            </form>
+            <a href="#home" class="main-button">
+                Explorar Viajes
+            </a>
 
         </div>
 
@@ -430,7 +280,7 @@
 
     <!-- FOOTER -->
 
-    <footer id="contacto">
+    <footer>
 
         <h2>
             Skýra
@@ -446,7 +296,6 @@
 
     </footer>
 
-    <!-- JS -->
     <script src="script.js"></script>
 
 </body>
