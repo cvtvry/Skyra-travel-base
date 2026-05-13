@@ -1,303 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Skýra | Viajes Legendarios</title>
+    <title>Skýra Travels</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- TIPOGRAFÍA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- GOOGLE FONTS -->
+    <style>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
 
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Inter', sans-serif;
+            background:#0d1110;
+            color:white;
+            overflow-x:hidden;
+        }
+
+        /* FONDO */
+
+        body::before{
+            content:"";
+            position:fixed;
+            inset:0;
+
+            background:
+            linear-gradient(rgba(5,10,10,.70), rgba(5,10,10,.75)),
+            url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop');
+
+            background-size:cover;
+            background-position:center;
+
+            z-index:-2;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            width:100%;
+            padding:25px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            position:fixed;
+            top:0;
+            left:0;
+
+            backdrop-filter:blur(8px);
+            background:rgba(0,0,0,.25);
+
+            z-index:999;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .logo img{
+            width:55px;
+            height:55px;
+            object-fit:contain;
+        }
+
+        .logo h1{
+            font-family:'Cinzel', serif;
+            font-size:1.8rem;
+            letter-spacing:2px;
+        }
+
+        .menu{
+            display:flex;
+            gap:35px;
+        }
+
+        .menu a{
+            text-decoration:none;
+            color:white;
+            font-size:.95rem;
+            transition:.3s;
+        }
+
+        .menu a:hover{
+            color:#9bb89b;
+        }
+
+        /* HERO */
+
+        .hero{
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+
+            padding:120px 10%;
+        }
+
+        .hero-content{
+            max-width:900px;
+        }
+
+        .hero h2{
+            font-family:'Cinzel', serif;
+            font-size:5rem;
+            margin-bottom:20px;
+            letter-spacing:3px;
+        }
+
+        .hero p{
+            font-size:1.3rem;
+            color:#d6d6d6;
+            line-height:1.7;
+            margin-bottom:40px;
+        }
+
+        .hero button{
+            padding:18px 45px;
+            border:none;
+            border-radius:50px;
+
+            background:#708d74;
+            color:white;
+
+            font-size:1rem;
+            cursor:pointer;
+
+            transition:.3s;
+        }
+
+        .hero button:hover{
+            transform:scale(1.05);
+            background:#89a88d;
+        }
+
+        /* LOADER */
+
+        #loader{
+            position:fixed;
+            inset:0;
+
+            background:#0d1110;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            z-index:9999;
+
+            transition:1s;
+        }
+
+        .dragon-loader{
+            width:90px;
+            height:90px;
+            border:5px solid rgba(255,255,255,.15);
+            border-top:5px solid #9bb89b;
+            border-radius:50%;
+
+            animation:spin 1s linear infinite;
+        }
+
+        @keyframes spin{
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            .hero h2{
+                font-size:3rem;
+            }
+
+            nav{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .menu{
+                gap:18px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- LOADER -->
 
-    <header class="navbar">
+    <div id="loader">
+        <div class="dragon-loader"></div>
+    </div>
+
+    <!-- NAV -->
+
+    <nav>
 
         <div class="logo">
 
-            <div class="logo-icon">
-                ✦
-            </div>
+            <!-- CAMBIA skyra-logo.png POR TU LOGO -->
 
-            <h1>
-                Skýra
-            </h1>
+            <img src="skyra-logo.png" alt="logo">
+
+            <h1>Skýra Travels</h1>
 
         </div>
 
-        <nav>
+        <div class="menu">
 
-            <a href="#home">Inicio</a>
-            <a href="#destinos">Destinos</a>
-            <a href="#paquetes">Paquetes</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#">Inicio</a>
+            <a href="#">Destinos</a>
+            <a href="#">Experiencias</a>
+            <a href="#">Reservas</a>
+            <a href="#">Contacto</a>
 
-        </nav>
+        </div>
 
-    </header>
+    </nav>
 
     <!-- HERO -->
 
-    <section class="hero" id="home">
-
-        <div class="hero-overlay"></div>
+    <section class="hero">
 
         <div class="hero-content">
 
-            <p class="tag">
-                VIAJES PREMIUM POR EUROPA DEL NORTE
-            </p>
-
-            <h2>
-                Descubre leyendas,
-                castillos y dragones.
-            </h2>
-
-            <p class="hero-text">
-
-                Experiencias exclusivas en Noruega,
-                Irlanda, Inglaterra, Escocia y Dinamarca.
-
-            </p>
-
-            <a href="#paquetes" class="main-button">
-                Reservar Ahora
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- DESTINOS -->
-
-    <section class="destinations" id="destinos">
-
-        <div class="section-title">
-
-            <p>DESTINOS DESTACADOS</p>
-
-            <h2>
-                Explora el norte legendario
-            </h2>
-
-        </div>
-
-        <div class="destination-grid">
-
-            <div class="destination-card">
-
-                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Noruega">
-
-                <div class="card-content">
-
-                    <h3>Noruega</h3>
-
-                    <p>
-                        Fiordos, auroras boreales y aventuras vikingas.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="destination-card">
-
-                <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop" alt="Irlanda">
-
-                <div class="card-content">
-
-                    <h3>Irlanda</h3>
-
-                    <p>
-                        Castillos medievales y paisajes mágicos.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="destination-card">
-
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop" alt="Escocia">
-
-                <div class="card-content">
-
-                    <h3>Escocia</h3>
-
-                    <p>
-                        Highlands, lagos y fortalezas históricas.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- PAQUETES -->
-
-    <section class="packages" id="paquetes">
-
-        <div class="section-title">
-
-            <p>EXPERIENCIAS SKÝRA</p>
-
-            <h2>
-                Paquetes Premium
-            </h2>
-
-        </div>
-
-        <div class="package-grid">
-
-            <div class="package-card">
-
-                <span class="package-country">
-                    Noruega
-                </span>
-
-                <h3>
-                    Dragon Fjords
-                </h3>
-
-                <h4>
-                    $2.490
-                </h4>
-
-                <ul>
-
-                    <li>Hoteles premium</li>
-                    <li>Auroras boreales</li>
-                    <li>Experiencia vikinga</li>
-                    <li>Transporte incluido</li>
-
-                </ul>
-
-                <button>
-                    Reservar
-                </button>
-
-            </div>
-
-            <div class="package-card featured">
-
-                <span class="featured-label">
-                    MÁS VENDIDO
-                </span>
-
-                <span class="package-country">
-                    Escocia + Irlanda
-                </span>
-
-                <h3>
-                    Kingdom Legends
-                </h3>
-
-                <h4>
-                    $3.990
-                </h4>
-
-                <ul>
-
-                    <li>Ruta medieval</li>
-                    <li>Castillos históricos</li>
-                    <li>Guía exclusivo</li>
-                    <li>Experiencia cinematográfica</li>
-
-                </ul>
-
-                <button>
-                    Reservar
-                </button>
-
-            </div>
-
-            <div class="package-card">
-
-                <span class="package-country">
-                    Dinamarca
-                </span>
-
-                <h3>
-                    Nordic Crown
-                </h3>
-
-                <h4>
-                    $2.190
-                </h4>
-
-                <ul>
-
-                    <li>Hoteles luxury</li>
-                    <li>Tour privado</li>
-                    <li>Gastronomía nórdica</li>
-                    <li>Experiencia premium</li>
-
-                </ul>
-
-                <button>
-                    Reservar
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CTA -->
-
-    <section class="cta" id="contacto">
-
-        <div class="cta-content">
+            <h2>Live the Legend</h2>
 
             <p>
-                COMIENZA TU AVENTURA
+                Explora Noruega, Irlanda, Escocia,
+                Inglaterra y Dinamarca en experiencias
+                inspiradas en leyendas, dragones y
+                paisajes del norte europeo.
             </p>
 
-            <h2>
-                Vive una experiencia épica con Skýra
-            </h2>
-
-            <a href="#home" class="main-button">
-                Explorar Viajes
-            </a>
+            <button>
+                Reservar Ahora
+            </button>
 
         </div>
 
     </section>
 
-    <!-- FOOTER -->
+    <script>
 
-    <footer>
+        window.addEventListener("load", () => {
 
-        <h2>
-            Skýra
-        </h2>
+            const loader = document.getElementById("loader");
 
-        <p>
-            Travel Beyond Legends
-        </p>
+            loader.style.opacity = "0";
 
-        <small>
-            © 2026 Skýra Travel Agency
-        </small>
+            setTimeout(() => {
+                loader.style.display = "none";
+            },1000);
 
-    </footer>
+        });
 
-    <script src="script.js"></script>
+    </script>
 
 </body>
-
 </html>
