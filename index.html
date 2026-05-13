@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SKÝRA</title>
+    <title>Skýra | Viajes Legendarios</title>
 
-    <link rel="stylesheet" href="style.css">
-
+    <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -21,15 +19,15 @@
 
     <header class="navbar">
 
-        <div class="logo-area">
+        <div class="logo-container">
 
-            <div class="logo">
-                🐉 SKÝRA
+            <div class="dragon-logo">
+                ✦
             </div>
 
-            <span class="slogan">
-                Beyond Northern Legends
-            </span>
+            <h1 class="logo-text">
+                Skýra
+            </h1>
 
         </div>
 
@@ -37,60 +35,43 @@
 
             <ul class="nav-links">
 
-                <li>
-                    <a href="#destinos">Destinos</a>
-                </li>
-
-                <li>
-                    <a href="#promo">Experiencias</a>
-                </li>
-
-                <li>
-                    <a href="#contacto">Reservas</a>
-                </li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#promo">Promociones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
 
             </ul>
 
         </nav>
 
-        <!-- MENU MOBILE -->
-
-        <div class="menu-toggle">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
     </header>
 
     <!-- HERO -->
 
-    <section class="hero">
+    <section class="hero" id="home">
 
-        <div class="hero-content fade-in">
+        <div class="overlay"></div>
 
-            <h1>
-                VIAJA HACIA LOS REINOS DEL NORTE
-            </h1>
+        <div class="hero-content">
 
-            <p>
-                Descubre Escocia, Irlanda, Noruega, Dinamarca e Inglaterra
-                con experiencias inspiradas en leyendas europeas.
+            <p class="subtitle">
+                VIAJES ÉPICOS POR EL NORTE DE EUROPA
             </p>
 
-            <div class="hero-buttons">
+            <h2>
+                Descubre reinos,
+                leyendas y dragones.
+            </h2>
 
-                <button>
-                    Reservar Ahora
-                </button>
+            <p class="description">
+                Explora Noruega, Irlanda, Escocia,
+                Inglaterra y Dinamarca con experiencias
+                premium inspiradas en la fantasía nórdica.
+            </p>
 
-                <button class="secondary-btn">
-                    Explorar Destinos
-                </button>
-
-            </div>
+            <a href="#destinos" class="hero-btn">
+                Reservar Ahora
+            </a>
 
         </div>
 
@@ -98,14 +79,118 @@
 
     <!-- DESTINOS -->
 
-    <section class="destinos fade-in" id="destinos">
+    <section class="destinations" id="destinos">
 
-        <h2>
-            Destinos Destacados
-        </h2>
+        <div class="section-title">
 
-        <div class="cards">
+            <p>DESTINOS DESTACADOS</p>
+
+            <h2>
+                Viajes legendarios
+            </h2>
+
+        </div>
+
+        <div class="cards-container">
 
             <div class="card">
 
-                <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop" alt="Noruega">
+
+                <div class="card-content">
+
+                    <h3>Noruega</h3>
+
+                    <p>
+                        Fiordos, auroras boreales y rutas vikingas.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop" alt="Irlanda">
+
+                <div class="card-content">
+
+                    <h3>Irlanda</h3>
+
+                    <p>
+                        Castillos medievales y paisajes mágicos.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1200&auto=format&fit=crop" alt="Escocia">
+
+                <div class="card-content">
+
+                    <h3>Escocia</h3>
+
+                    <p>
+                        Highlands, lagos y fortalezas antiguas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROMO -->
+
+    <section class="promo-section" id="promo">
+
+        <div class="promo-content">
+
+            <p class="promo-tag">
+                EXPERIENCIA PREMIUM
+            </p>
+
+            <h2>
+                Viajes diseñados para aventureros modernos
+            </h2>
+
+            <p>
+                Paquetes exclusivos con hoteles,
+                tours guiados y experiencias inspiradas
+                en las leyendas del norte.
+            </p>
+
+            <button class="promo-btn">
+                Explorar paquetes
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer id="contacto">
+
+        <h2>Skýra</h2>
+
+        <p>
+            Travel Beyond Legends
+        </p>
+
+        <small>
+            © 2026 Skýra Travel Agency
+        </small>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
