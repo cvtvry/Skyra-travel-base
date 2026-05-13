@@ -1,4 +1,18 @@
-// NAVBAR SCROLL EFFECT
+// LOADER
+
+window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hidden");
+
+    }, 1800);
+
+});
+
+// NAVBAR EFFECT
 
 const navbar = document.querySelector(".navbar");
 
@@ -11,7 +25,7 @@ window.addEventListener("scroll", () => {
 
     } else {
 
-        navbar.style.background = "rgba(0,0,0,0.45)";
+        navbar.style.background = "rgba(0,0,0,0.4)";
         navbar.style.boxShadow = "none";
 
     }
@@ -20,7 +34,9 @@ window.addEventListener("scroll", () => {
 
 // CARD ANIMATION
 
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(
+    ".card, .package-card, .testimonial-card, .stat-box"
+);
 
 const observer = new IntersectionObserver(entries => {
 
@@ -49,19 +65,9 @@ cards.forEach(card => {
 
 });
 
-// GLOW EFFECT HERO BUTTON
-
-const heroBtn = document.querySelector(".hero-btn");
-
-setInterval(() => {
-
-    heroBtn.classList.toggle("pulse");
-
-}, 2000);
-
 // FLOATING PARTICLES
 
-for(let i = 0; i < 25; i++){
+for(let i = 0; i < 35; i++){
 
     const particle = document.createElement("div");
 
@@ -69,15 +75,29 @@ for(let i = 0; i < 25; i++){
 
     document.body.appendChild(particle);
 
-    particle.style.left = Math.random() * 100 + "vw";
+    particle.style.left =
+    Math.random() * 100 + "vw";
 
     particle.style.animationDuration =
     (Math.random() * 10 + 5) + "s";
 
-    particle.style.opacity = Math.random();
+    particle.style.opacity =
+    Math.random();
 
     particle.style.width =
     particle.style.height =
     (Math.random() * 4 + 2) + "px";
 
 }
+
+// BOOKING BUTTON
+
+const bookingForm = document.querySelector(".booking-form");
+
+bookingForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    alert("¡Tu aventura con Skýra comenzará pronto! 🐉");
+
+});
