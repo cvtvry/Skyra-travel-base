@@ -10,25 +10,7 @@ menuToggle.addEventListener('click', () => {
 
 });
 
-/* NAVBAR SCROLL */
-
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-
-    if(window.scrollY > 50){
-
-        navbar.classList.add('scrolled');
-
-    } else {
-
-        navbar.classList.remove('scrolled');
-
-    }
-
-});
-
-/* ANIMACIONES SCROLL */
+/* ANIMACIONES */
 
 const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -65,7 +47,7 @@ buttons.forEach(button => {
         if(button.innerText.includes('Reservar')){
 
             alert(
-                'Bienvenido a SKÝRA ✨\n\nTu aventura por los reinos del norte comenzará pronto.'
+                '🐉 Bienvenido a SKÝRA ✨\n\nTu aventura comenzará pronto.'
             );
 
         }
