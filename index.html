@@ -41,7 +41,7 @@
             inset:0;
 
             background:
-            linear-gradient(rgba(5,10,10,.76), rgba(5,10,10,.82)),
+            linear-gradient(rgba(5,10,10,.78), rgba(5,10,10,.85)),
             url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop');
 
             background-size:cover;
@@ -63,20 +63,20 @@
             justify-content:center;
             align-items:center;
 
-            z-index:9999;
+            z-index:99999;
 
             transition:1s;
         }
 
         .dragon-loader{
 
-            width:90px;
-            height:90px;
+            width:95px;
+            height:95px;
 
             border-radius:50%;
 
             border:5px solid rgba(255,255,255,.15);
-            border-top:5px solid #8ca98f;
+            border-top:5px solid #9ab49b;
 
             animation:spin 1s linear infinite;
         }
@@ -95,7 +95,7 @@
 
             width:100%;
 
-            padding:25px 8%;
+            padding:22px 8%;
 
             display:flex;
             justify-content:space-between;
@@ -105,11 +105,13 @@
             top:0;
             left:0;
 
-            backdrop-filter:blur(14px);
+            backdrop-filter:blur(18px);
 
-            background:rgba(0,0,0,.25);
+            background:rgba(0,0,0,.28);
 
-            z-index:999;
+            border-bottom:1px solid rgba(255,255,255,.05);
+
+            z-index:9999;
         }
 
         .logo{
@@ -131,9 +133,9 @@
 
             font-family:'Cinzel', serif;
 
-            letter-spacing:2px;
+            font-size:1.7rem;
 
-            font-size:1.8rem;
+            letter-spacing:2px;
         }
 
         .menu{
@@ -145,7 +147,6 @@
         .menu a{
 
             text-decoration:none;
-
             color:white;
 
             transition:.3s;
@@ -153,7 +154,18 @@
 
         .menu a:hover{
 
-            color:#8ca98f;
+            color:#9ab49b;
+        }
+
+        /* MENU MOBILE */
+
+        .mobile-btn{
+
+            display:none;
+
+            font-size:2rem;
+
+            cursor:pointer;
         }
 
         /* HERO */
@@ -169,11 +181,13 @@
             text-align:center;
 
             padding:120px 10%;
+
+            position:relative;
         }
 
         .hero-content{
 
-            max-width:900px;
+            max-width:950px;
 
             animation:fadeUp 1.5s ease;
         }
@@ -182,22 +196,22 @@
 
             font-family:'Cinzel', serif;
 
-            font-size:5rem;
+            font-size:5.5rem;
 
             margin-bottom:25px;
 
-            letter-spacing:4px;
+            letter-spacing:5px;
         }
 
         .hero p{
 
             font-size:1.3rem;
 
-            line-height:1.8;
+            color:#d8d8d8;
 
-            color:#d9d9d9;
+            line-height:1.9;
 
-            margin-bottom:40px;
+            margin-bottom:45px;
         }
 
         .hero button{
@@ -220,19 +234,12 @@
 
         .hero button:hover{
 
-            transform:scale(1.05);
+            transform:scale(1.07);
 
             background:#8ca98f;
         }
 
-        /* DESTINOS */
-
-        .destinations{
-
-            padding:120px 8%;
-
-            background:linear-gradient(to bottom,#101615,#0d1110);
-        }
+        /* TITULOS */
 
         .section-title{
 
@@ -256,16 +263,25 @@
 
             margin:auto;
 
-            color:#d0d0d0;
+            color:#d2d2d2;
 
             line-height:1.8;
+        }
+
+        /* DESTINOS */
+
+        .destinations{
+
+            padding:120px 8%;
+
+            background:linear-gradient(to bottom,#101615,#0d1110);
         }
 
         .cards{
 
             display:grid;
 
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 
             gap:35px;
         }
@@ -276,7 +292,7 @@
 
             border:1px solid rgba(255,255,255,.08);
 
-            border-radius:25px;
+            border-radius:28px;
 
             overflow:hidden;
 
@@ -293,8 +309,7 @@
         .card img{
 
             width:100%;
-
-            height:320px;
+            height:330px;
 
             object-fit:cover;
         }
@@ -315,7 +330,7 @@
 
         .card-content p{
 
-            color:#d2d2d2;
+            color:#d6d6d6;
 
             line-height:1.8;
 
@@ -343,13 +358,48 @@
             background:#8ca98f;
         }
 
-        /* BENEFICIOS */
+        /* GALERIA */
+
+        .gallery{
+
+            padding:120px 8%;
+
+            background:#111716;
+        }
+
+        .gallery-grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+            gap:25px;
+        }
+
+        .gallery-grid img{
+
+            width:100%;
+            height:320px;
+
+            object-fit:cover;
+
+            border-radius:25px;
+
+            transition:.4s;
+        }
+
+        .gallery-grid img:hover{
+
+            transform:scale(1.03);
+        }
+
+        /* BENEFITS */
 
         .benefits{
 
             padding:120px 8%;
 
-            background:#111716;
+            background:#0d1110;
         }
 
         .benefit-grid{
@@ -363,113 +413,106 @@
 
         .benefit{
 
-            background:rgba(255,255,255,.04);
+            background:rgba(255,255,255,.05);
+
+            border:1px solid rgba(255,255,255,.06);
 
             padding:40px;
 
             border-radius:25px;
-
-            border:1px solid rgba(255,255,255,.06);
 
             transition:.3s;
         }
 
         .benefit:hover{
 
-            transform:translateY(-8px);
+            transform:translateY(-10px);
         }
 
         .benefit h4{
 
             font-family:'Cinzel', serif;
 
-            font-size:1.6rem;
+            font-size:1.5rem;
 
             margin-bottom:20px;
         }
 
         .benefit p{
 
-            color:#d0d0d0;
-
             line-height:1.8;
+
+            color:#d0d0d0;
         }
 
-        /* PROMO */
+        /* RESERVA */
 
-        .promo{
+        .reservation{
 
-            position:relative;
+            padding:120px 8%;
 
-            min-height:70vh;
-
-            display:flex;
-            justify-content:center;
-            align-items:center;
-
-            text-align:center;
-
-            padding:100px 8%;
-
-            background:url('https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?q=80&w=1974&auto=format&fit=crop');
-
-            background-size:cover;
-            background-position:center;
+            background:linear-gradient(to bottom,#111716,#0d1110);
         }
 
-        .promo-overlay{
+        .reservation-box{
 
-            position:absolute;
-            inset:0;
+            max-width:800px;
 
-            background:rgba(0,0,0,.60);
+            margin:auto;
+
+            background:rgba(255,255,255,.05);
+
+            border:1px solid rgba(255,255,255,.08);
+
+            padding:50px;
+
+            border-radius:30px;
+
+            backdrop-filter:blur(10px);
         }
 
-        .promo-content{
+        .reservation-box input,
+        .reservation-box select{
 
-            position:relative;
-            z-index:2;
+            width:100%;
 
-            max-width:850px;
-        }
+            margin-bottom:20px;
 
-        .promo-content h3{
-
-            font-family:'Cinzel', serif;
-
-            font-size:3.5rem;
-
-            margin-bottom:25px;
-        }
-
-        .promo-content p{
-
-            line-height:1.9;
-
-            margin-bottom:35px;
-
-            color:#e3e3e3;
-        }
-
-        .promo-content button{
-
-            padding:18px 40px;
+            padding:18px;
 
             border:none;
+
+            border-radius:15px;
+
+            background:rgba(255,255,255,.08);
+
+            color:white;
+
+            font-size:1rem;
+        }
+
+        .reservation-box button{
+
+            width:100%;
+
+            padding:18px;
+
+            border:none;
+
             border-radius:50px;
 
             background:#708d74;
 
             color:white;
 
+            font-size:1rem;
+
             cursor:pointer;
 
             transition:.3s;
         }
 
-        .promo-content button:hover{
-
-            transform:scale(1.05);
+        .reservation-box button:hover{
 
             background:#8ca98f;
         }
@@ -480,9 +523,9 @@
 
             padding:60px 8%;
 
-            background:#0a0d0c;
-
             text-align:center;
+
+            background:#080b0a;
         }
 
         footer h3{
@@ -521,15 +564,15 @@
             justify-content:center;
             align-items:center;
 
-            text-decoration:none;
-
             color:white;
+
+            text-decoration:none;
 
             font-size:1.5rem;
 
-            box-shadow:0 10px 30px rgba(0,0,0,.35);
+            z-index:9999;
 
-            z-index:999;
+            box-shadow:0 10px 30px rgba(0,0,0,.35);
 
             transition:.3s;
         }
@@ -539,7 +582,7 @@
             transform:scale(1.1);
         }
 
-        /* ANIMACIONES */
+        /* ANIMACION */
 
         @keyframes fadeUp{
 
@@ -563,35 +606,42 @@
 
         @media(max-width:900px){
 
-            nav{
+            .mobile-btn{
 
-                flex-direction:column;
-
-                gap:15px;
+                display:block;
             }
 
             .menu{
 
-                flex-wrap:wrap;
+                position:absolute;
 
-                justify-content:center;
+                top:100%;
+                left:0;
 
-                gap:18px;
+                width:100%;
+
+                background:#111716;
+
+                flex-direction:column;
+
+                padding:25px;
+
+                display:none;
+            }
+
+            .menu.active{
+
+                display:flex;
             }
 
             .hero h2{
 
-                font-size:3rem;
+                font-size:3.2rem;
             }
 
             .section-title h3{
 
-                font-size:2.3rem;
-            }
-
-            .promo-content h3{
-
-                font-size:2.5rem;
+                font-size:2.2rem;
             }
 
         }
@@ -622,12 +672,19 @@
 
         </div>
 
-        <div class="menu">
+        <div class="mobile-btn" id="mobileBtn">
+
+            ☰
+
+        </div>
+
+        <div class="menu" id="menu">
 
             <a href="#inicio">Inicio</a>
             <a href="#destinos">Destinos</a>
+            <a href="#galeria">Galería</a>
             <a href="#beneficios">Experiencias</a>
-            <a href="#promo">Reservas</a>
+            <a href="#reserva">Reservas</a>
             <a href="#footer">Contacto</a>
 
         </div>
@@ -644,10 +701,10 @@
 
             <p>
 
-                Explora Noruega, Irlanda, Escocia,
-                Inglaterra y Dinamarca a través de
-                experiencias inspiradas en leyendas,
-                dragones y naturaleza nórdica.
+                Viaja por Noruega, Irlanda, Escocia,
+                Inglaterra y Dinamarca en experiencias
+                inspiradas en dragones, reinos antiguos
+                y naturaleza europea.
 
             </p>
 
@@ -667,8 +724,8 @@
 
             <p>
 
-                Descubre paisajes antiguos, castillos,
-                montañas y tierras cubiertas de niebla.
+                Descubre paisajes épicos, castillos y
+                experiencias cinematográficas.
 
             </p>
 
@@ -686,8 +743,7 @@
 
                     <p>
 
-                        Fiordos inmensos, auroras boreales
-                        y pueblos junto al mar.
+                        Fiordos gigantes y auroras boreales.
 
                     </p>
 
@@ -707,8 +763,7 @@
 
                     <p>
 
-                        Acantilados épicos, castillos y
-                        campos verdes infinitos.
+                        Castillos medievales y campos verdes.
 
                     </p>
 
@@ -728,8 +783,7 @@
 
                     <p>
 
-                        Highlands cubiertas de niebla y
-                        antiguas leyendas nórdicas.
+                        Highlands cubiertas de niebla y leyendas.
 
                     </p>
 
@@ -743,6 +797,36 @@
 
     </section>
 
+    <!-- GALERIA -->
+
+    <section class="gallery" id="galeria">
+
+        <div class="section-title">
+
+            <h3>Galería Nórdica</h3>
+
+            <p>
+
+                Inspiración visual de los paisajes europeos.
+
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1974&auto=format&fit=crop">
+
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1974&auto=format&fit=crop">
+
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1974&auto=format&fit=crop">
+
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974&auto=format&fit=crop">
+
+        </div>
+
+    </section>
+
     <!-- BENEFICIOS -->
 
     <section class="benefits" id="beneficios">
@@ -750,13 +834,6 @@
         <div class="section-title">
 
             <h3>¿Por Qué Elegir Skýra?</h3>
-
-            <p>
-
-                Diseñamos viajes inmersivos inspirados
-                en cultura, naturaleza y fantasía europea.
-
-            </p>
 
         </div>
 
@@ -768,8 +845,7 @@
 
                 <p>
 
-                    Rutas cuidadosamente diseñadas para
-                    viajeros amantes de la aventura.
+                    Viajes diseñados para amantes de la aventura.
 
                 </p>
 
@@ -781,8 +857,7 @@
 
                 <p>
 
-                    Lugares inspirados en leyendas,
-                    castillos y paisajes épicos.
+                    Lugares inspirados en fantasía y naturaleza.
 
                 </p>
 
@@ -790,12 +865,11 @@
 
             <div class="benefit">
 
-                <h4>Viajes Personalizados</h4>
+                <h4>Atención Personalizada</h4>
 
                 <p>
 
-                    Creamos experiencias únicas adaptadas
-                    a cada viajero.
+                    Planificación especial para cada viajero.
 
                 </p>
 
@@ -805,24 +879,40 @@
 
     </section>
 
-    <!-- PROMO -->
+    <!-- RESERVA -->
 
-    <section class="promo" id="promo">
+    <section class="reservation" id="reserva">
 
-        <div class="promo-overlay"></div>
+        <div class="section-title">
 
-        <div class="promo-content">
-
-            <h3>Viaja Como en una Leyenda</h3>
+            <h3>Reserva Tu Aventura</h3>
 
             <p>
 
-                Vive experiencias inspiradas en dragones,
-                reinos antiguos y naturaleza europea.
+                Comienza tu experiencia nórdica hoy mismo.
 
             </p>
 
-            <button>Reservar Experiencia</button>
+        </div>
+
+        <div class="reservation-box">
+
+            <input type="text" placeholder="Nombre Completo">
+
+            <input type="email" placeholder="Correo Electrónico">
+
+            <select>
+
+                <option>Selecciona un destino</option>
+                <option>Noruega</option>
+                <option>Irlanda</option>
+                <option>Escocia</option>
+                <option>Inglaterra</option>
+                <option>Dinamarca</option>
+
+            </select>
+
+            <button>Enviar Reserva</button>
 
         </div>
 
@@ -837,7 +927,7 @@
         <p>
 
             Live the Legend © 2026 <br>
-            Agencia inspirada en la magia del norte europeo.
+            Inspirado en la magia del norte europeo.
 
         </p>
 
@@ -853,6 +943,8 @@
 
     <script>
 
+        // LOADER
+
         window.addEventListener("load", () => {
 
             const loader = document.getElementById("loader");
@@ -864,6 +956,18 @@
                 loader.style.display = "none";
 
             },1000);
+
+        });
+
+        // MENU MOBILE
+
+        const mobileBtn = document.getElementById("mobileBtn");
+
+        const menu = document.getElementById("menu");
+
+        mobileBtn.addEventListener("click", () => {
+
+            menu.classList.toggle("active");
 
         });
 
