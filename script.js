@@ -1,77 +1,83 @@
-/* MENU MOBILE */
+// NAVBAR SCROLL EFFECT
 
-const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector(".navbar");
 
-const navLinks = document.querySelector('.nav-links');
+window.addEventListener("scroll", () => {
 
-menuToggle.addEventListener('click', () => {
+    if(window.scrollY > 50){
 
-    navLinks.classList.toggle('active');
+        navbar.style.background = "rgba(3, 7, 18, 0.92)";
+        navbar.style.boxShadow = "0 0 25px rgba(0,0,0,0.5)";
+
+    } else {
+
+        navbar.style.background = "rgba(0,0,0,0.45)";
+        navbar.style.boxShadow = "none";
+
+    }
 
 });
 
-/* ANIMACIONES */
+// CARD ANIMATION
 
-const fadeElements = document.querySelectorAll('.fade-in');
+const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(entries => {
 
     entries.forEach(entry => {
 
         if(entry.isIntersecting){
 
-            entry.target.classList.add('show');
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0px)";
 
         }
 
     });
 
-},{
+}, {
     threshold:0.2
 });
 
-fadeElements.forEach(element => {
+cards.forEach(card => {
 
-    observer.observe(element);
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.8s ease";
 
-});
-
-/* BOTONES */
-
-const buttons = document.querySelectorAll('button');
-
-buttons.forEach(button => {
-
-    button.addEventListener('click', () => {
-
-        if(button.innerText.includes('Reservar')){
-
-            alert(
-                '🐉 Bienvenido a SKÝRA ✨\n\nTu aventura comenzará pronto.'
-            );
-
-        }
-
-        if(button.innerText.includes('Explorar')){
-
-            document.querySelector('#destinos').scrollIntoView({
-                behavior:'smooth'
-            });
-
-        }
-
-    });
+    observer.observe(card);
 
 });
 
-/* CERRAR MENU MOBILE */
+// GLOW EFFECT HERO BUTTON
 
-document.querySelectorAll('.nav-links a').forEach(link => {
+const heroBtn = document.querySelector(".hero-btn");
 
-    link.addEventListener('click', () => {
+setInterval(() => {
 
-        navLinks.classList.remove('active');
+    heroBtn.classList.toggle("pulse");
 
-    });
+}, 2000);
 
-});
+// FLOATING PARTICLES
+
+for(let i = 0; i < 25; i++){
+
+    const particle = document.createElement("div");
+
+    particle.classList.add("particle");
+
+    document.body.appendChild(particle);
+
+    particle.style.left = Math.random() * 100 + "vw";
+
+    particle.style.animationDuration =
+    (Math.random() * 10 + 5) + "s";
+
+    particle.style.opacity = Math.random();
+
+    particle.style.width =
+    particle.style.height =
+    (Math.random() * 4 + 2) + "px";
+
+}
