@@ -12,7 +12,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
 
@@ -41,13 +41,24 @@
             inset:0;
 
             background:
-            linear-gradient(rgba(5,10,10,.78), rgba(5,10,10,.85)),
+            linear-gradient(rgba(5,10,10,.82), rgba(5,10,10,.88)),
             url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop');
 
             background-size:cover;
             background-position:center;
 
             z-index:-2;
+        }
+
+        /* SCROLL */
+
+        ::-webkit-scrollbar{
+            width:10px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background:#5f7862;
+            border-radius:20px;
         }
 
         /* LOADER */
@@ -57,25 +68,25 @@
             position:fixed;
             inset:0;
 
-            background:#0d1110;
+            background:#0b0f0e;
 
             display:flex;
             justify-content:center;
             align-items:center;
 
-            z-index:99999;
+            z-index:999999;
 
             transition:1s;
         }
 
         .dragon-loader{
 
-            width:95px;
-            height:95px;
+            width:100px;
+            height:100px;
 
             border-radius:50%;
 
-            border:5px solid rgba(255,255,255,.15);
+            border:5px solid rgba(255,255,255,.12);
             border-top:5px solid #9ab49b;
 
             animation:spin 1s linear infinite;
@@ -107,11 +118,20 @@
 
             backdrop-filter:blur(18px);
 
-            background:rgba(0,0,0,.28);
+            background:rgba(0,0,0,.25);
 
             border-bottom:1px solid rgba(255,255,255,.05);
 
+            transition:.4s;
+
             z-index:9999;
+        }
+
+        nav.scrolled{
+
+            padding:16px 8%;
+
+            background:rgba(5,8,8,.88);
         }
 
         .logo{
@@ -133,9 +153,9 @@
 
             font-family:'Cinzel', serif;
 
-            font-size:1.7rem;
-
             letter-spacing:2px;
+
+            font-size:1.7rem;
         }
 
         .menu{
@@ -147,17 +167,35 @@
         .menu a{
 
             text-decoration:none;
+
             color:white;
+
+            position:relative;
 
             transition:.3s;
         }
 
-        .menu a:hover{
+        .menu a::after{
 
-            color:#9ab49b;
+            content:"";
+
+            position:absolute;
+
+            left:0;
+            bottom:-6px;
+
+            width:0%;
+            height:2px;
+
+            background:#8ca98f;
+
+            transition:.3s;
         }
 
-        /* MENU MOBILE */
+        .menu a:hover::after{
+
+            width:100%;
+        }
 
         .mobile-btn{
 
@@ -196,18 +234,20 @@
 
             font-family:'Cinzel', serif;
 
-            font-size:5.5rem;
+            font-size:5.8rem;
+
+            letter-spacing:5px;
 
             margin-bottom:25px;
 
-            letter-spacing:5px;
+            text-shadow:0 0 30px rgba(255,255,255,.08);
         }
 
         .hero p{
 
             font-size:1.3rem;
 
-            color:#d8d8d8;
+            color:#d7d7d7;
 
             line-height:1.9;
 
@@ -226,17 +266,22 @@
             color:white;
 
             font-size:1rem;
+            font-weight:600;
 
             cursor:pointer;
 
-            transition:.3s;
+            transition:.4s;
+
+            box-shadow:0 10px 30px rgba(112,141,116,.25);
         }
 
         .hero button:hover{
 
-            transform:scale(1.07);
+            transform:translateY(-5px);
 
             background:#8ca98f;
+
+            box-shadow:0 15px 40px rgba(140,169,143,.35);
         }
 
         /* TITULOS */
@@ -263,9 +308,9 @@
 
             margin:auto;
 
-            color:#d2d2d2;
-
             line-height:1.8;
+
+            color:#d1d1d1;
         }
 
         /* DESTINOS */
@@ -292,18 +337,27 @@
 
             border:1px solid rgba(255,255,255,.08);
 
-            border-radius:28px;
+            border-radius:30px;
 
             overflow:hidden;
 
-            backdrop-filter:blur(10px);
+            backdrop-filter:blur(12px);
 
-            transition:.4s;
+            transition:.5s;
+
+            opacity:0;
+            transform:translateY(60px);
+        }
+
+        .card.show{
+
+            opacity:1;
+            transform:translateY(0);
         }
 
         .card:hover{
 
-            transform:translateY(-12px);
+            transform:translateY(-15px);
         }
 
         .card img{
@@ -330,9 +384,9 @@
 
         .card-content p{
 
-            color:#d6d6d6;
-
             line-height:1.8;
+
+            color:#d7d7d7;
 
             margin-bottom:25px;
         }
@@ -385,12 +439,12 @@
 
             border-radius:25px;
 
-            transition:.4s;
+            transition:.5s;
         }
 
         .gallery-grid img:hover{
 
-            transform:scale(1.03);
+            transform:scale(1.04);
         }
 
         /* BENEFITS */
@@ -415,13 +469,22 @@
 
             background:rgba(255,255,255,.05);
 
-            border:1px solid rgba(255,255,255,.06);
+            border:1px solid rgba(255,255,255,.08);
+
+            border-radius:28px;
 
             padding:40px;
 
-            border-radius:25px;
+            transition:.4s;
 
-            transition:.3s;
+            opacity:0;
+            transform:translateY(60px);
+        }
+
+        .benefit.show{
+
+            opacity:1;
+            transform:translateY(0);
         }
 
         .benefit:hover{
@@ -433,7 +496,7 @@
 
             font-family:'Cinzel', serif;
 
-            font-size:1.5rem;
+            font-size:1.6rem;
 
             margin-bottom:20px;
         }
@@ -442,10 +505,10 @@
 
             line-height:1.8;
 
-            color:#d0d0d0;
+            color:#d3d3d3;
         }
 
-        /* RESERVA */
+        /* RESERVAS */
 
         .reservation{
 
@@ -456,7 +519,7 @@
 
         .reservation-box{
 
-            max-width:800px;
+            max-width:850px;
 
             margin:auto;
 
@@ -464,11 +527,13 @@
 
             border:1px solid rgba(255,255,255,.08);
 
+            border-radius:35px;
+
             padding:50px;
 
-            border-radius:30px;
+            backdrop-filter:blur(14px);
 
-            backdrop-filter:blur(10px);
+            box-shadow:0 10px 40px rgba(0,0,0,.25);
         }
 
         .reservation-box input,
@@ -476,13 +541,13 @@
 
             width:100%;
 
-            margin-bottom:20px;
-
             padding:18px;
+
+            margin-bottom:20px;
 
             border:none;
 
-            border-radius:15px;
+            border-radius:18px;
 
             background:rgba(255,255,255,.08);
 
@@ -498,7 +563,6 @@
             padding:18px;
 
             border:none;
-
             border-radius:50px;
 
             background:#708d74;
@@ -506,6 +570,7 @@
             color:white;
 
             font-size:1rem;
+            font-weight:600;
 
             cursor:pointer;
 
@@ -521,11 +586,11 @@
 
         footer{
 
-            padding:60px 8%;
+            padding:70px 8%;
 
             text-align:center;
 
-            background:#080b0a;
+            background:#070909;
         }
 
         footer h3{
@@ -544,7 +609,7 @@
             line-height:1.8;
         }
 
-        /* BOTON FLOTANTE */
+        /* BOTON */
 
         .floating-button{
 
@@ -553,8 +618,8 @@
             right:25px;
             bottom:25px;
 
-            width:65px;
-            height:65px;
+            width:68px;
+            height:68px;
 
             border-radius:50%;
 
@@ -572,9 +637,9 @@
 
             z-index:9999;
 
-            box-shadow:0 10px 30px rgba(0,0,0,.35);
+            box-shadow:0 15px 40px rgba(0,0,0,.35);
 
-            transition:.3s;
+            transition:.4s;
         }
 
         .floating-button:hover{
@@ -620,7 +685,7 @@
 
                 width:100%;
 
-                background:#111716;
+                background:#101615;
 
                 flex-direction:column;
 
@@ -636,12 +701,17 @@
 
             .hero h2{
 
-                font-size:3.2rem;
+                font-size:3.4rem;
             }
 
             .section-title h3{
 
-                font-size:2.2rem;
+                font-size:2.3rem;
+            }
+
+            .reservation-box{
+
+                padding:30px;
             }
 
         }
@@ -662,7 +732,7 @@
 
     <!-- NAVBAR -->
 
-    <nav>
+    <nav id="navbar">
 
         <div class="logo">
 
@@ -701,14 +771,18 @@
 
             <p>
 
-                Viaja por Noruega, Irlanda, Escocia,
+                Explora Noruega, Irlanda, Escocia,
                 Inglaterra y Dinamarca en experiencias
                 inspiradas en dragones, reinos antiguos
                 y naturaleza europea.
 
             </p>
 
-            <button>Reservar Ahora</button>
+            <button onclick="scrollToSection()">
+
+                Reservar Ahora
+
+            </button>
 
         </div>
 
@@ -724,8 +798,8 @@
 
             <p>
 
-                Descubre paisajes épicos, castillos y
-                experiencias cinematográficas.
+                Descubre paisajes cinematográficos,
+                castillos y aventuras nórdicas.
 
             </p>
 
@@ -733,7 +807,7 @@
 
         <div class="cards">
 
-            <div class="card">
+            <div class="card reveal">
 
                 <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1974&auto=format&fit=crop">
 
@@ -753,7 +827,7 @@
 
             </div>
 
-            <div class="card">
+            <div class="card reveal">
 
                 <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?q=80&w=1974&auto=format&fit=crop">
 
@@ -763,7 +837,7 @@
 
                     <p>
 
-                        Castillos medievales y campos verdes.
+                        Castillos medievales y paisajes verdes.
 
                     </p>
 
@@ -773,7 +847,7 @@
 
             </div>
 
-            <div class="card">
+            <div class="card reveal">
 
                 <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=2070&auto=format&fit=crop">
 
@@ -807,7 +881,7 @@
 
             <p>
 
-                Inspiración visual de los paisajes europeos.
+                Inspiración visual del norte europeo.
 
             </p>
 
@@ -827,7 +901,7 @@
 
     </section>
 
-    <!-- BENEFICIOS -->
+    <!-- BENEFITS -->
 
     <section class="benefits" id="beneficios">
 
@@ -839,31 +913,31 @@
 
         <div class="benefit-grid">
 
-            <div class="benefit">
+            <div class="benefit reveal">
 
                 <h4>Experiencias Premium</h4>
 
                 <p>
 
-                    Viajes diseñados para amantes de la aventura.
+                    Viajes diseñados para aventureros modernos.
 
                 </p>
 
             </div>
 
-            <div class="benefit">
+            <div class="benefit reveal">
 
                 <h4>Destinos Exclusivos</h4>
 
                 <p>
 
-                    Lugares inspirados en fantasía y naturaleza.
+                    Lugares inspirados en fantasía y cultura nórdica.
 
                 </p>
 
             </div>
 
-            <div class="benefit">
+            <div class="benefit reveal">
 
                 <h4>Atención Personalizada</h4>
 
@@ -879,7 +953,7 @@
 
     </section>
 
-    <!-- RESERVA -->
+    <!-- RESERVAS -->
 
     <section class="reservation" id="reserva">
 
@@ -889,7 +963,7 @@
 
             <p>
 
-                Comienza tu experiencia nórdica hoy mismo.
+                Comienza tu viaje por tierras legendarias.
 
             </p>
 
@@ -912,7 +986,11 @@
 
             </select>
 
-            <button>Enviar Reserva</button>
+            <button>
+
+                Enviar Reserva
+
+            </button>
 
         </div>
 
@@ -933,7 +1011,7 @@
 
     </footer>
 
-    <!-- BOTON FLOTANTE -->
+    <!-- BOTON -->
 
     <a href="#inicio" class="floating-button">
 
@@ -968,6 +1046,60 @@
         mobileBtn.addEventListener("click", () => {
 
             menu.classList.toggle("active");
+
+        });
+
+        // NAVBAR EFECTO
+
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+
+            if(window.scrollY > 50){
+
+                navbar.classList.add("scrolled");
+
+            }else{
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+        // BOTON HERO
+
+        function scrollToSection(){
+
+            document.getElementById("reserva").scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+        // REVEAL
+
+        const reveals = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+
+            reveals.forEach(reveal => {
+
+                const windowHeight = window.innerHeight;
+
+                const revealTop = reveal.getBoundingClientRect().top;
+
+                const revealPoint = 100;
+
+                if(revealTop < windowHeight - revealPoint){
+
+                    reveal.classList.add("show");
+
+                }
+
+            });
 
         });
 
