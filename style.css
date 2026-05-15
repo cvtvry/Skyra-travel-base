@@ -1,1 +1,696 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#0d1110;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(5,10,10,.82), rgba(5,10,10,.88)),
+    url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    z-index:-2;
+}
+
+/* SCROLL */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#5f7862;
+    border-radius:20px;
+}
+
+/* LOADER */
+
+#loader{
+
+    position:fixed;
+    inset:0;
+
+    background:#0b0f0e;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+    transition:1s;
+}
+
+.dragon-loader{
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.12);
+    border-top:5px solid #9ab49b;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* NAVBAR */
+
+nav{
+
+    width:100%;
+
+    padding:22px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(0,0,0,.25);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    transition:.4s;
+
+    z-index:9999;
+}
+
+nav.scrolled{
+
+    padding:16px 8%;
+
+    background:rgba(5,8,8,.88);
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+
+    width:60px;
+    height:60px;
+
+    object-fit:contain;
+}
+
+.logo h1{
+
+    font-family:'Cinzel', serif;
+
+    letter-spacing:2px;
+
+    font-size:1.7rem;
+}
+
+.menu{
+
+    display:flex;
+    gap:35px;
+}
+
+.menu a{
+
+    text-decoration:none;
+
+    color:white;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0%;
+    height:2px;
+
+    background:#8ca98f;
+
+    transition:.3s;
+}
+
+.menu a:hover::after{
+
+    width:100%;
+}
+
+.mobile-btn{
+
+    display:none;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 10%;
+
+    position:relative;
+}
+
+.hero-content{
+
+    max-width:950px;
+
+    animation:fadeUp 1.5s ease;
+}
+
+.hero h2{
+
+    font-family:'Cinzel', serif;
+
+    font-size:5.8rem;
+
+    letter-spacing:5px;
+
+    margin-bottom:25px;
+
+    text-shadow:0 0 30px rgba(255,255,255,.08);
+}
+
+.hero p{
+
+    font-size:1.3rem;
+
+    color:#d7d7d7;
+
+    line-height:1.9;
+
+    margin-bottom:45px;
+}
+
+.hero button{
+
+    padding:18px 45px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#708d74;
+
+    color:white;
+
+    font-size:1rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:0 10px 30px rgba(112,141,116,.25);
+}
+
+.hero button:hover{
+
+    transform:translateY(-5px);
+
+    background:#8ca98f;
+
+    box-shadow:0 15px 40px rgba(140,169,143,.35);
+}
+
+/* TITULOS */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:70px;
+}
+
+.section-title h3{
+
+    font-family:'Cinzel', serif;
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:#d1d1d1;
+}
+
+/* DESTINOS */
+
+.destinations{
+
+    padding:120px 8%;
+
+    background:linear-gradient(to bottom,#101615,#0d1110);
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+}
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(12px);
+
+    transition:.5s;
+
+    opacity:0;
+    transform:translateY(60px);
+}
+
+.card.show{
+
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+
+    transform:translateY(-15px);
+}
+
+.card img{
+
+    width:100%;
+    height:330px;
+
+    object-fit:cover;
+}
+
+.card-content{
+
+    padding:30px;
+}
+
+.card-content h4{
+
+    font-family:'Cinzel', serif;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+}
+
+.card-content p{
+
+    line-height:1.8;
+
+    color:#d7d7d7;
+
+    margin-bottom:25px;
+}
+
+.card-content button{
+
+    padding:14px 28px;
+
+    border:none;
+    border-radius:40px;
+
+    background:#708d74;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.card-content button:hover{
+
+    background:#8ca98f;
+}
+
+/* GALERIA */
+
+.gallery{
+
+    padding:120px 8%;
+    background:#111716;
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.gallery-grid img{
+
+    width:100%;
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    transition:.5s;
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.04);
+}
+
+/* BENEFITS */
+
+.benefits{
+
+    padding:120px 8%;
+
+    background:#0d1110;
+}
+
+.benefit-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+.benefit{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    transition:.4s;
+
+    opacity:0;
+    transform:translateY(60px);
+}
+
+.benefit.show{
+
+    opacity:1;
+    transform:translateY(0);
+}
+
+.benefit:hover{
+
+    transform:translateY(-10px);
+}
+
+.benefit h4{
+
+    font-family:'Cinzel', serif;
+
+    font-size:1.6rem;
+
+    margin-bottom:20px;
+}
+
+.benefit p{
+
+    line-height:1.8;
+
+    color:#d3d3d3;
+}
+
+/* RESERVAS */
+
+.reservation{
+
+    padding:120px 8%;
+
+    background:linear-gradient(to bottom,#111716,#0d1110);
+}
+
+.reservation-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:35px;
+
+    padding:50px;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.reservation-box input,
+.reservation-box select{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:1rem;
+}
+
+.reservation-box button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#708d74;
+
+    color:white;
+
+    font-size:1rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.reservation-box button:hover{
+
+    background:#8ca98f;
+}
+
+/* FOOTER */
+
+footer{
+
+    padding:70px 8%;
+
+    text-align:center;
+
+    background:#070909;
+}
+
+footer h3{
+
+    font-family:'Cinzel', serif;
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+}
+
+footer p{
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+}
+
+/* BOTON */
+
+.floating-button{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:68px;
+    height:68px;
+
+    border-radius:50%;
+
+    background:#708d74;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.5rem;
+
+    z-index:9999;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+    transition:.4s;
+}
+
+.floating-button:hover{
+
+    transform:scale(1.1);
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .mobile-btn{
+
+        display:block;
+    }
+
+    .menu{
+
+        position:absolute;
+
+        top:100%;
+        left:0;
+
+        width:100%;
+
+        background:#101615;
+
+        flex-direction:column;
+
+        padding:25px;
+
+        display:none;
+    }
+
+    .menu.active{
+
+        display:flex;
+    }
+
+    .hero h2{
+
+        font-size:3.4rem;
+    }
+
+    .section-title h3{
+
+        font-size:2.3rem;
+    }
+
+    .reservation-box{
+
+        padding:30px;
+    }
+
+}
