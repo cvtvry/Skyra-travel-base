@@ -140,44 +140,99 @@ nav.scrolled{
     font-size:1.7rem;
 }
 
+/* MENU */
+
 .menu{
 
     display:flex;
-    gap:35px;
+    align-items:center;
 }
 
-.menu a{
+/* DROPDOWN */
 
-    text-decoration:none;
+.dropdown{
+
+    position:relative;
+}
+
+.dropdown-btn{
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.08);
 
     color:white;
 
-    position:relative;
+    font-size:1rem;
+
+    cursor:pointer;
 
     transition:.3s;
+
+    backdrop-filter:blur(10px);
 }
 
-.menu a::after{
+.dropdown-btn:hover{
 
-    content:"";
+    background:#708d74;
+}
+
+.dropdown-content{
 
     position:absolute;
 
-    left:0;
-    bottom:-6px;
+    top:120%;
+    right:0;
 
-    width:0%;
-    height:2px;
+    min-width:240px;
 
-    background:#8ca98f;
+    background:rgba(10,15,14,.96);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    display:none;
+
+    flex-direction:column;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+    z-index:99999;
+}
+
+.dropdown-content a{
+
+    padding:18px 22px;
+
+    color:white;
+
+    text-decoration:none;
 
     transition:.3s;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 
-.menu a:hover::after{
+.dropdown-content a:hover{
 
-    width:100%;
+    background:#708d74;
 }
+
+.dropdown:hover .dropdown-content{
+
+    display:flex;
+}
+
+/* MOBILE BUTTON */
 
 .mobile-btn{
 
@@ -399,6 +454,7 @@ nav.scrolled{
 .gallery{
 
     padding:120px 8%;
+
     background:#111716;
 }
 
@@ -650,34 +706,6 @@ footer p{
 
 @media(max-width:900px){
 
-    .mobile-btn{
-
-        display:block;
-    }
-
-    .menu{
-
-        position:absolute;
-
-        top:100%;
-        left:0;
-
-        width:100%;
-
-        background:#101615;
-
-        flex-direction:column;
-
-        padding:25px;
-
-        display:none;
-    }
-
-    .menu.active{
-
-        display:flex;
-    }
-
     .hero h2{
 
         font-size:3.4rem;
@@ -691,6 +719,18 @@ footer p{
     .reservation-box{
 
         padding:30px;
+    }
+
+    .dropdown-btn{
+
+        padding:12px 24px;
+
+        font-size:.95rem;
+    }
+
+    .dropdown-content{
+
+        min-width:220px;
     }
 
 }
