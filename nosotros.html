@@ -27,8 +27,8 @@
         }
 
         body{
-            font-family:'Inter', sans-serif;
-            background:#0b1110;
+            font-family:'Inter',sans-serif;
+            background:#0b0f0f;
             color:white;
             overflow-x:hidden;
         }
@@ -41,7 +41,7 @@
             inset:0;
 
             background:
-            linear-gradient(rgba(3,8,8,.88), rgba(3,8,8,.92)),
+            linear-gradient(rgba(5,8,8,.88),rgba(5,8,8,.92)),
             url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop');
 
             background-size:cover;
@@ -54,23 +54,23 @@
 
         nav{
 
-            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
 
-            padding:22px 8%;
+            width:100%;
 
             display:flex;
             justify-content:space-between;
             align-items:center;
 
-            position:fixed;
-            top:0;
-            left:0;
+            padding:20px 8%;
 
-            background:rgba(0,0,0,.35);
+            background:rgba(0,0,0,.25);
 
-            backdrop-filter:blur(18px);
+            backdrop-filter:blur(15px);
 
-            border-bottom:1px solid rgba(255,255,255,.06);
+            border-bottom:1px solid rgba(255,255,255,.05);
 
             z-index:9999;
         }
@@ -84,19 +84,15 @@
 
         .logo img{
 
-            width:60px;
-            height:60px;
-
-            object-fit:contain;
+            width:58px;
+            height:58px;
         }
 
         .logo h1{
 
-            font-family:'Cinzel', serif;
-
-            font-size:1.7rem;
-
+            font-family:'Cinzel',serif;
             letter-spacing:2px;
+            font-size:1.6rem;
         }
 
         .menu{
@@ -110,9 +106,8 @@
             text-decoration:none;
             color:white;
 
-            position:relative;
-
             transition:.3s;
+            position:relative;
         }
 
         .menu a::after{
@@ -122,12 +117,12 @@
             position:absolute;
 
             left:0;
-            bottom:-5px;
+            bottom:-6px;
 
             width:0%;
             height:2px;
 
-            background:#8ca98f;
+            background:#90ad92;
 
             transition:.3s;
         }
@@ -141,7 +136,7 @@
 
         .hero{
 
-            min-height:70vh;
+            min-height:75vh;
 
             display:flex;
             justify-content:center;
@@ -149,7 +144,7 @@
 
             text-align:center;
 
-            padding:160px 10% 100px;
+            padding:140px 10% 80px;
         }
 
         .hero-content{
@@ -159,7 +154,7 @@
 
         .hero h2{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             font-size:5rem;
 
@@ -172,16 +167,16 @@
 
             font-size:1.2rem;
 
-            line-height:1.9;
+            line-height:2;
 
-            color:#d5d5d5;
+            color:#d2d2d2;
         }
 
         /* SECTIONS */
 
         section{
 
-            padding:100px 8%;
+            padding:110px 8%;
         }
 
         .section-title{
@@ -193,7 +188,7 @@
 
         .section-title h3{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             font-size:3rem;
 
@@ -206,14 +201,14 @@
 
             margin:auto;
 
-            color:#d2d2d2;
-
             line-height:1.8;
+
+            color:#d4d4d4;
         }
 
-        /* HISTORY */
+        /* STORY */
 
-        .history{
+        .story{
 
             display:grid;
 
@@ -224,49 +219,47 @@
             align-items:center;
         }
 
-        .history img{
+        .story img{
 
             width:100%;
-
-            border-radius:30px;
 
             height:500px;
 
             object-fit:cover;
 
-            box-shadow:0 15px 40px rgba(0,0,0,.35);
+            border-radius:30px;
         }
 
-        .history-text{
+        .story-text{
 
-            background:rgba(255,255,255,.05);
+            background:rgba(255,255,255,.04);
 
             border:1px solid rgba(255,255,255,.08);
 
             border-radius:30px;
 
-            padding:45px;
+            padding:40px;
 
-            backdrop-filter:blur(10px);
+            backdrop-filter:blur(12px);
         }
 
-        .history-text h4{
+        .story-text h4{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             font-size:2rem;
 
             margin-bottom:20px;
         }
 
-        .history-text p{
+        .story-text p{
 
             line-height:1.9;
 
-            color:#d8d8d8;
+            color:#d7d7d7;
         }
 
-        /* MISSION */
+        /* MISION */
 
         .mission-grid{
 
@@ -281,11 +274,11 @@
 
             background:rgba(255,255,255,.05);
 
-            border-radius:30px;
+            border:1px solid rgba(255,255,255,.08);
 
             padding:45px;
 
-            border:1px solid rgba(255,255,255,.08);
+            border-radius:30px;
 
             transition:.4s;
         }
@@ -297,7 +290,7 @@
 
         .mission-card h4{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             font-size:2rem;
 
@@ -306,79 +299,79 @@
 
         .mission-card p{
 
-            color:#d7d7d7;
-
             line-height:1.9;
+
+            color:#d7d7d7;
         }
 
-        /* VALUES */
+        /* VALORES */
 
         .values-grid{
 
             display:grid;
 
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 
             gap:30px;
         }
 
-        .value{
+        .value-card{
+
+            text-align:center;
+
+            padding:40px 30px;
 
             background:rgba(255,255,255,.05);
 
             border-radius:28px;
-
-            padding:40px;
-
-            text-align:center;
 
             border:1px solid rgba(255,255,255,.08);
 
             transition:.4s;
         }
 
-        .value:hover{
+        .value-card:hover{
 
             transform:translateY(-10px);
         }
 
-        .value h4{
+        .value-icon{
 
-            margin:20px 0;
+            font-size:3rem;
 
-            font-size:1.5rem;
-
-            font-family:'Cinzel', serif;
+            margin-bottom:20px;
         }
 
-        .value p{
+        .value-card h4{
 
-            color:#d3d3d3;
+            font-family:'Cinzel',serif;
+
+            margin-bottom:15px;
+        }
+
+        .value-card p{
+
+            color:#d4d4d4;
 
             line-height:1.8;
         }
 
-        .icon{
-
-            font-size:3rem;
-        }
-
         /* SERVICES */
 
-        .services{
+        .services-grid{
 
             display:grid;
 
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-            gap:30px;
+            gap:35px;
         }
 
         .service{
 
             background:rgba(255,255,255,.05);
 
-            border-radius:28px;
+            border-radius:30px;
 
             overflow:hidden;
 
@@ -400,7 +393,7 @@
 
         .service-content h4{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             font-size:1.8rem;
 
@@ -416,6 +409,11 @@
 
         /* TRUST */
 
+        .trust{
+
+            background:linear-gradient(to bottom,#111716,#0c1010);
+        }
+
         .trust-grid{
 
             display:grid;
@@ -425,31 +423,33 @@
             gap:30px;
         }
 
-        .trust{
+        .trust-card{
 
             text-align:center;
 
+            padding:45px 30px;
+
+            border-radius:30px;
+
             background:rgba(255,255,255,.05);
-
-            padding:40px;
-
-            border-radius:28px;
 
             border:1px solid rgba(255,255,255,.08);
         }
 
-        .trust h2{
+        .trust-card h2{
 
             font-size:3rem;
 
-            color:#9ec0a1;
+            color:#9ab49b;
 
-            margin-bottom:10px;
+            margin-bottom:15px;
         }
 
-        .trust p{
+        .trust-card p{
 
-            color:#d6d6d6;
+            color:#d5d5d5;
+
+            line-height:1.8;
         }
 
         /* TEAM */
@@ -458,7 +458,7 @@
 
             display:grid;
 
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
             gap:35px;
         }
@@ -472,6 +472,8 @@
             overflow:hidden;
 
             border:1px solid rgba(255,255,255,.08);
+
+            text-align:center;
 
             transition:.4s;
         }
@@ -489,72 +491,72 @@
             object-fit:cover;
         }
 
-        .team-content{
+        .team-card h4{
 
-            padding:25px;
+            font-family:'Cinzel',serif;
+
+            margin-top:25px;
+
+            font-size:1.5rem;
         }
 
-        .team-content h4{
+        .team-card span{
 
-            font-family:'Cinzel', serif;
+            display:block;
 
-            font-size:1.6rem;
+            margin:10px 0 20px;
 
-            margin-bottom:10px;
+            color:#9ab49b;
         }
 
-        .team-content span{
+        .team-card p{
 
-            color:#9ec0a1;
+            padding:0 25px 35px;
 
-            font-size:.95rem;
-        }
+            line-height:1.8;
 
-        .team-content p{
-
-            margin-top:15px;
-
-            color:#d3d3d3;
-
-            line-height:1.7;
+            color:#d7d7d7;
         }
 
         /* CERTIFICATIONS */
 
         .certifications{
 
+            background:#101515;
+        }
+
+        .cert-grid{
+
             display:grid;
 
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
             gap:30px;
         }
 
         .cert{
 
-            background:rgba(255,255,255,.05);
-
             padding:40px;
 
-            border-radius:28px;
+            border-radius:30px;
+
+            background:rgba(255,255,255,.05);
 
             border:1px solid rgba(255,255,255,.08);
-
-            text-align:center;
         }
 
         .cert h4{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             margin-bottom:15px;
 
-            font-size:1.4rem;
+            font-size:1.5rem;
         }
 
         .cert p{
 
-            color:#d5d5d5;
+            color:#d7d7d7;
 
             line-height:1.8;
         }
@@ -565,23 +567,23 @@
 
             padding:70px 8%;
 
-            background:#050707;
-
             text-align:center;
+
+            background:#060808;
         }
 
         footer h3{
 
-            font-family:'Cinzel', serif;
+            font-family:'Cinzel',serif;
 
             font-size:2rem;
 
-            margin-bottom:15px;
+            margin-bottom:20px;
         }
 
         footer p{
 
-            color:#bdbdbd;
+            color:#bcbcbc;
 
             line-height:1.8;
         }
@@ -590,19 +592,14 @@
 
         @media(max-width:900px){
 
+            .hero h2{
+
+                font-size:3.4rem;
+            }
+
             .menu{
 
                 display:none;
-            }
-
-            .hero h2{
-
-                font-size:3.3rem;
-            }
-
-            .section-title h3{
-
-                font-size:2.3rem;
             }
 
         }
@@ -654,8 +651,9 @@
             <p>
 
                 Somos una OTA inspirada en la magia del norte europeo,
-                creada para transformar cada viaje en una experiencia
-                cinematográfica, inmersiva y legendaria.
+                creada para viajeros que buscan experiencias inmersivas,
+                cinematográficas y auténticas en los paisajes más legendarios
+                de Europa.
 
             </p>
 
@@ -673,29 +671,26 @@
 
         </div>
 
-        <div class="history">
+        <div class="story">
 
-            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop">
 
-            <div class="history-text">
+            <div class="story-text">
 
-                <h4>Una agencia nacida entre leyendas</h4>
+                <h4>El Origen de Skýra</h4>
 
                 <p>
 
-                    Skýra Travels nació en 2016 como un proyecto enfocado
-                    en crear experiencias premium inspiradas en la cultura
-                    nórdica, los paisajes cinematográficos y las leyendas
-                    europeas.
+                    Skýra Travels nació en 2018 con la visión de transformar
+                    los viajes tradicionales en experiencias memorables inspiradas
+                    en leyendas nórdicas, castillos medievales y naturaleza salvaje.
 
-                    Desde nuestros inicios hemos trabajado diseñando rutas
-                    exclusivas por Noruega, Irlanda, Escocia, Inglaterra
-                    y Dinamarca, combinando turismo cultural, aventura y
-                    experiencias inmersivas.
+                    Desde nuestros inicios, hemos diseñado rutas exclusivas por
+                    Noruega, Escocia, Irlanda, Inglaterra y Dinamarca, conectando
+                    viajeros con culturas ancestrales y paisajes cinematográficos.
 
-                    Actualmente ayudamos a viajeros de Latinoamérica y Europa
-                    a descubrir destinos únicos mediante paquetes diseñados
-                    con atención personalizada y estándares premium.
+                    Hoy somos una OTA especializada en turismo inmersivo premium,
+                    enfocada en crear aventuras auténticas y personalizadas.
 
                 </p>
 
@@ -723,9 +718,10 @@
 
                 <p>
 
-                    Crear experiencias de viaje inolvidables que conecten
-                    aventura, cultura y emoción mediante destinos inspirados
-                    en la fantasía europea y el norte legendario.
+                    Crear experiencias de viaje únicas inspiradas en la
+                    fantasía europea, conectando viajeros con destinos
+                    auténticos mediante servicios premium, personalizados
+                    y seguros.
 
                 </p>
 
@@ -737,9 +733,9 @@
 
                 <p>
 
-                    Convertirnos en la OTA líder en experiencias temáticas
-                    premium del norte europeo, reconocida por innovación,
-                    diseño inmersivo y excelencia en servicio.
+                    Convertirnos en la OTA líder en turismo inmersivo
+                    europeo, reconocida internacionalmente por innovación,
+                    calidad y experiencias cinematográficas.
 
                 </p>
 
@@ -761,37 +757,23 @@
 
         <div class="values-grid">
 
-            <div class="value">
+            <div class="value-card">
 
-                <div class="icon">⚔️</div>
+                <div class="value-icon">⚔️</div>
 
-                <h4>Compromiso</h4>
+                <h4>Aventura</h4>
 
                 <p>
 
-                    Diseñamos cada experiencia con dedicación y detalle.
+                    Diseñamos experiencias memorables y emocionantes.
 
                 </p>
 
             </div>
 
-            <div class="value">
+            <div class="value-card">
 
-                <div class="icon">🌌</div>
-
-                <h4>Innovación</h4>
-
-                <p>
-
-                    Creamos viajes inmersivos diferentes a lo tradicional.
-
-                </p>
-
-            </div>
-
-            <div class="value">
-
-                <div class="icon">🛡️</div>
+                <div class="value-icon">🛡️</div>
 
                 <h4>Confianza</h4>
 
@@ -803,15 +785,29 @@
 
             </div>
 
-            <div class="value">
+            <div class="value-card">
 
-                <div class="icon">🐉</div>
+                <div class="value-icon">🌌</div>
 
-                <h4>Experiencia</h4>
+                <h4>Inspiración</h4>
 
                 <p>
 
-                    Especialistas en destinos europeos y aventuras premium.
+                    Viajes inspirados en leyendas y culturas reales.
+
+                </p>
+
+            </div>
+
+            <div class="value-card">
+
+                <div class="value-icon">❄️</div>
+
+                <h4>Excelencia</h4>
+
+                <p>
+
+                    Atención premium y experiencias exclusivas.
 
                 </p>
 
@@ -831,7 +827,7 @@
 
         </div>
 
-        <div class="services">
+        <div class="services-grid">
 
             <div class="service">
 
@@ -839,31 +835,12 @@
 
                 <div class="service-content">
 
-                    <h4>Paquetes Premium</h4>
+                    <h4>Rutas Premium</h4>
 
                     <p>
 
-                        Rutas completas por Noruega, Irlanda,
-                        Escocia, Inglaterra y Dinamarca.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="service">
-
-                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop">
-
-                <div class="service-content">
-
-                    <h4>Experiencias Temáticas</h4>
-
-                    <p>
-
-                        Viajes inspirados en castillos,
-                        dragones y cultura nórdica.
+                        Viajes exclusivos por los paisajes más impresionantes
+                        del norte europeo.
 
                     </p>
 
@@ -877,12 +854,30 @@
 
                 <div class="service-content">
 
-                    <h4>Asesoría Personalizada</h4>
+                    <h4>Experiencias Inmersivas</h4>
 
                     <p>
 
-                        Atención individual para construir
-                        el viaje ideal para cada cliente.
+                        Tours cinematográficos inspirados en castillos,
+                        leyendas y cultura nórdica.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="service">
+
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1600&auto=format&fit=crop">
+
+                <div class="service-content">
+
+                    <h4>Asistencia Personalizada</h4>
+
+                    <p>
+
+                        Acompañamiento completo antes y durante el viaje.
 
                     </p>
 
@@ -896,7 +891,7 @@
 
     <!-- CONFIANZA -->
 
-    <section>
+    <section class="trust">
 
         <div class="section-title">
 
@@ -906,35 +901,51 @@
 
         <div class="trust-grid">
 
-            <div class="trust">
+            <div class="trust-card">
 
-                <h2>+10</h2>
+                <h2>8+</h2>
 
-                <p>Años de experiencia</p>
+                <p>
 
-            </div>
+                    Años creando experiencias premium.
 
-            <div class="trust">
-
-                <h2>+4.500</h2>
-
-                <p>Viajeros atendidos</p>
+                </p>
 
             </div>
 
-            <div class="trust">
+            <div class="trust-card">
+
+                <h2>12K</h2>
+
+                <p>
+
+                    Viajeros satisfechos alrededor del mundo.
+
+                </p>
+
+            </div>
+
+            <div class="trust-card">
 
                 <h2>98%</h2>
 
-                <p>Satisfacción de clientes</p>
+                <p>
+
+                    Índice de satisfacción de clientes.
+
+                </p>
 
             </div>
 
-            <div class="trust">
+            <div class="trust-card">
 
                 <h2>24/7</h2>
 
-                <p>Soporte durante el viaje</p>
+                <p>
+
+                    Atención personalizada y soporte continuo.
+
+                </p>
 
             </div>
 
@@ -958,20 +969,15 @@
 
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop">
 
-                <div class="team-content">
+                <h4>Freya Andersen</h4>
 
-                    <h4>Elena Björk</h4>
+                <span>CEO & Fundadora</span>
 
-                    <span>CEO & Fundadora</span>
+                <p>
 
-                    <p>
+                    Especialista en turismo inmersivo y experiencias nórdicas.
 
-                        Especialista en turismo premium europeo
-                        y experiencias inmersivas.
-
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
@@ -979,41 +985,31 @@
 
                 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop">
 
-                <div class="team-content">
+                <h4>Erik Solberg</h4>
 
-                    <h4>Oliver Kane</h4>
+                <span>Director de Experiencias</span>
 
-                    <span>Director de Experiencias</span>
+                <p>
 
-                    <p>
+                    Diseñador de rutas premium por Europa del Norte.
 
-                        Diseñador de rutas temáticas
-                        y aventuras cinematográficas.
-
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
             <div class="team-card">
 
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1970&auto=format&fit=crop">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1974&auto=format&fit=crop">
 
-                <div class="team-content">
+                <h4>Astrid Nygaard</h4>
 
-                    <h4>Freya Lindholm</h4>
+                <span>Travel Advisor</span>
 
-                    <span>Travel Advisor</span>
+                <p>
 
-                    <p>
+                    Experta en planificación personalizada de viajes.
 
-                        Encargada de personalizar cada viaje
-                        según las preferencias del viajero.
-
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
@@ -1023,7 +1019,7 @@
 
     <!-- CERTIFICACIONES -->
 
-    <section>
+    <section class="certifications">
 
         <div class="section-title">
 
@@ -1031,7 +1027,7 @@
 
         </div>
 
-        <div class="certifications">
+        <div class="cert-grid">
 
             <div class="cert">
 
@@ -1039,8 +1035,7 @@
 
                 <p>
 
-                    Reconocimiento por innovación
-                    en experiencias turísticas premium.
+                    Reconocimiento por innovación en experiencias turísticas premium.
 
                 </p>
 
@@ -1048,12 +1043,11 @@
 
             <div class="cert">
 
-                <h4>Nordic Tourism Association</h4>
+                <h4>Nordic Tourism Certified Partner</h4>
 
                 <p>
 
-                    Certificación de calidad en rutas
-                    turísticas del norte europeo.
+                    Certificación internacional en turismo sostenible europeo.
 
                 </p>
 
@@ -1061,12 +1055,11 @@
 
             <div class="cert">
 
-                <h4>Global OTA Trust Program</h4>
+                <h4>Best Immersive OTA 2025</h4>
 
                 <p>
 
-                    Estándar internacional de seguridad
-                    y transparencia en reservas online.
+                    Premio ficticio otorgado por excelencia en experiencias digitales.
 
                 </p>
 
